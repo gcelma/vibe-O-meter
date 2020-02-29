@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "server": "node src/server.js",
-    "test": "test"
+    "test": "test",
+    "debug": "node inspect src/server.js"
   },
   "author": "waldo geraldo faldo",
   "license": "ISC",
