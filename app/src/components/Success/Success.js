@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 class Success extends Component {
-
     componentDidMount() {
-        setTimeout(() => this.props.history.push('/login'), 2000)
+        setTimeout(() => (this.props.history.push('/home')), 2000)
     }
 
     render() {

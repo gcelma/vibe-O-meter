@@ -22,7 +22,12 @@ const userSchema = new Schema({
     type: ObjectId,
     required: true,
     ref: 'Poll'
-  }]
+  }],
+
+  resetLink: {
+    type: String,
+    default: ''
+  }
 });
 
 const pollSchema = new Schema({

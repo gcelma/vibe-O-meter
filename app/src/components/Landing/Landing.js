@@ -6,7 +6,7 @@ class Landing extends Component {
         return <div className="landing">
             <div><Link to="/login">LOGIN</Link></div>
             <div><Link to="/register">REGISTER</Link></div>
-            <div><Link to="/home">HOME</Link></div>
+            {/* <div><Link to="/home">HOME</Link></div> */}
         </div>
     }
 }

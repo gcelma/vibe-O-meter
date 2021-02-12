@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Polls from '../Polls/Polls';
+import Header from '../Header/Header';
+import Chart from '../Chart/Chart';
+import './Home.sass'
 
 class Home extends Component {
     render() {
-        return <div className="Home">
-            <div>home</div>
-            <div><Link to="/landing">back</Link></div>
-            <Polls />
-        </div>
+        return <Fragment>
+            <Header />
+            <section className="Home">
+                <Chart />
+                <Link to="/poll">New Poll</Link>
+                <Polls />
+            </section>
+        </Fragment>
     }
 }
 

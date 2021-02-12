@@ -1,18 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import client from './client';
 import './index.sass';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
+import auth from './utils/auth';
+
+Object.defineProperties(auth, {
+    __userApiToken__: {
+        set(token) {
+            sessionStorage.setItem('__userApiToken__', token)
+        },
+
+        get() {
+            return sessionStorage.getItem('__userApiToken__')
+        }
+    }
+});
 
 const Root = () => (
-    <HashRouter>
+    <BrowserRouter>
         <ApolloProvider client= { client }>
             <App />
         </ApolloProvider>
-    </HashRouter>
+    </BrowserRouter>
 );
 
 ReactDOM.render(<Root />, document.getElementById('root'));
